@@ -1,0 +1,12 @@
+import { PrismaClient } from "@prisma/client";
+const prisma = new PrismaClient();
+
+export async function deleteById(req, res) {
+  try {         
+    await prisma.plane.delete({ where: { id: Number(req.query.id) } });
+    return res.sendStatus(204).send();        // No Content
+  } catch (err) {
+    console.error(err);
+    return res.status(500).json({ error: "Failed to delete" });
+  }
+}
