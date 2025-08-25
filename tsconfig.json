@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "rootDir": ".",
+    "outDir": "dist",
+    "esModuleInterop": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "types": ["node", "multer"],
+    "allowJs": false,
+    "checkJs": false,
+    "sourceMap": true
+  },
+  "include": ["controllers/**/*.ts", "routers/**/*.ts", "index.ts"],
+  "exclude": ["node_modules", "dist"]
+}

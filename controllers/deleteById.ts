@@ -1,8 +1,9 @@
 import { PrismaClient } from "@prisma/client";
+import type { Request, Response } from "express";
 const prisma = new PrismaClient();
 
-export async function deleteById(req, res) {
-  try {         
+export async function deleteById(req : Request, res : Response) {
+  try {          
     await prisma.plane.delete({ where: { id: Number(req.query.id) } });
     return res.sendStatus(204).send();        // No Content
   } catch (err) {
