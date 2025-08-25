@@ -41,7 +41,6 @@ export async function post(req: MulterRequest, res: Response) {
     // Write the file
     await fs.writeFile(destPath, image.buffer);
 
-    // Persist DB row (store just the filename)
     await prisma.plane.create({
       data: {
         name: String(name),
